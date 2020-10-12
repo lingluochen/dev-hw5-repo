@@ -30,6 +30,7 @@ public class Physics : MonoBehaviour
     public AudioSource arrowA;
     public AudioSource bounceA;
     public Transform teleport;
+    public Animator slimeAnim;
     private int counter = 0;
 
     // Start is called before the first frame update
@@ -70,18 +71,24 @@ public class Physics : MonoBehaviour
             lastPlat.SetActive(true);
         }
 
+        //jump
         if (onGround.isGrounded == true)
         {
+
+            slimeAnim.SetBool("jump", false);
             if (Input.GetKeyDown(KeyCode.Space) && move == true)
             {
+                
                 thisRigidbody.isKinematic = false;
                 thisRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 jumpA.Play();
+               
             }
         }
         else
         {
             thisRigidbody.gravityScale = gravityInAir;
+            slimeAnim.SetBool("jump", true);
         }
 
         string coinS = coin.ToString();
