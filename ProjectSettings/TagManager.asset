@@ -8,9 +8,6 @@ TagManager:
   - arrow
   - wall
   - coin
-  - coll_wall
-  - bounce
-  - spike
   layers:
   - Default
   - TransparentFX
@@ -20,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - rayCast
+  - 
   - 
   - 
   - 
@@ -47,7 +44,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: slime
-    uniqueID: 1231354909
     locked: 0
